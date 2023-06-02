@@ -8,12 +8,12 @@
 
     - name: Install Package
       yum:
-        name: "{{ apache_package }}"
+        name: "{{ http_package }}"
         state: present
         
     - name: Start Apache
       service:
-        name: "{{ apache_service }}"
+        name: "{{ http_service }}"
         state: started
         enabled: yes
 
