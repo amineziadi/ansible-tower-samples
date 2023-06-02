@@ -1,3 +1,4 @@
+---
 - name: Hello World Sample
   hosts: all
   tasks:
@@ -5,13 +6,15 @@
       debug:
         msg: "Hello World!"
 
-    - name: Install Apache
-      package:
-        name: "{{ http_package }}"
+    - name: Install Package
+      yum:
+        name: "{{ apache_package }}"
         state: present
-
+        
     - name: Start Apache
       service:
-        name: "{{ http_service }}"
+        name: "{{ apache_service }}"
         state: started
         enabled: yes
+
+
