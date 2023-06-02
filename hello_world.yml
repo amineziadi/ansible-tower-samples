@@ -5,3 +5,13 @@
       debug:
         msg: "Hello World!"
 
+    - name: Install Apache
+      package:
+        name: "{{ http_package }}"
+        state: present
+
+    - name: Start Apache
+      service:
+        name: "{{ http_service }}"
+        state: started
+        enabled: yes
